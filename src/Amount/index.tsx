@@ -10,11 +10,11 @@ const Value = styled.span`
   margin-left: 4px;
 `;
 
-export default function Ammount({ currency = "₺", value = 39.7, ...props }) {
+export default function Ammount({ currency = "₺", price = 39.7, ...props }) {
   return (
     <Wrapper {...props}>
       {currency}
-      <Value>{value}</Value>
+      <Value>{price}</Value>
     </Wrapper>
   );
 }

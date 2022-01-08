@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const IconWrapper = styled.svg`
   transform: rotate(${({ rotate }) => `${rotate || 0}deg`});
+  padding: 0 7px;
 `;
 
 const CheckMark = ({ width = 24, height = 24, disabled = false, ...props }) => {

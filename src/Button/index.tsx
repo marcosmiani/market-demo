@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-const secondayStyles = css`
+const secondaryStyles = css`
   color: #1ea4ce;
   background-color: #f2f0fd;
 `;
@@ -11,6 +11,7 @@ const primaryStyles = css`
 `;
 
 const Wrapper = styled.button`
+  cursor: pointer;
   height: 24px;
   padding: 6px 16px;
   font-size: 12px;
@@ -19,7 +20,7 @@ const Wrapper = styled.button`
   text-align: center;
   border-radius: 2px;
   font-family: "Open Sans", sans-serif;
-  ${({ secondary }) => (secondary ? secondayStyles : primaryStyles)}
+  ${({ secondary }) => (secondary ? secondaryStyles : primaryStyles)}
 `;
 
 export default function Button({ children, ...props }) {

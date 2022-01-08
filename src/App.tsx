@@ -30,7 +30,6 @@ export default function App() {
       <GlobalStyle />
       <Header />
       <Products />
-      <h2>Start editing to see some magic happen!</h2>
     </Wrapper>
   );
 }

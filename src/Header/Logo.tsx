@@ -1,4 +1,10 @@
-const CheckMark = (props) => {
+type Props = {
+  width?: string | number,
+  height?: string | number,
+  fill?: string
+}
+
+const CheckMark = (props: Props) => {
   const { width = 142, height = 41, fill = "none" } = props;
   return (
     <svg

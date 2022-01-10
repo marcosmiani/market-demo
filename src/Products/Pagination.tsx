@@ -1,3 +1,4 @@
+import { MouseEventHandler, ReactEventHandler } from "react";
 import styled, { css } from "styled-components";
 import ArrowIcon from "./ArrowIcon";
 
@@ -21,7 +22,12 @@ const selectedStyles = css`
   background-color: #1ea4ce;
 `;
 
-const PageButton = styled.button`
+type PageProps = {
+  selected?: boolean,
+  disabled?: boolean
+}
+
+const PageButton = styled.button<PageProps>`
   color: #1ea4ce;
   cursor: pointer;
   border: none;
@@ -48,7 +54,7 @@ const Elipsis = styled.div`
 export default function Product({
   pages = 20,
   selectedPage = 1,
-  onSelectPage = (page, evt) =>
+  onSelectPage = (page: Number, evt: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>
     console.info("page-click-not-implemented", page, evt)
 }) {
   const pagesArray = Array(pages)

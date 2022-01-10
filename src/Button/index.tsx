@@ -1,5 +1,10 @@
 import styled, { css } from "styled-components";
 
+type Props = {
+  children: any,
+  secondary?: Boolean
+}
+
 const secondaryStyles = css`
   color: #1ea4ce;
   background-color: #f2f0fd;
@@ -10,7 +15,7 @@ const primaryStyles = css`
   background-color: #1ea4ce;
 `;
 
-const Wrapper = styled.button`
+const Wrapper = styled.button<Props>`
   cursor: pointer;
   height: 24px;
   padding: 6px 16px;
@@ -20,9 +25,9 @@ const Wrapper = styled.button`
   text-align: center;
   border-radius: 2px;
   font-family: "Open Sans", sans-serif;
-  ${({ secondary }) => (secondary ? secondaryStyles : primaryStyles)}
+  ${(props) => (props.secondary ? secondaryStyles : primaryStyles)}
 `;
 
-export default function Button({ children, ...props }) {
+export default function Button({ children, ...props }: Props) {
   return <Wrapper {...props}>{children}</Wrapper>;
 }

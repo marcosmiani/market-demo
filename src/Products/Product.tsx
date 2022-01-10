@@ -19,7 +19,11 @@ const ImageFrame = styled.div`
   padding: 16px;
 `;
 
-const Image = styled.img`
+type ImageProps = {
+  src?: string,
+}
+
+const Image = styled.img<ImageProps>`
   width: 100%;
   height: 100%;
   background-color: #c4c4c4;
@@ -34,11 +38,17 @@ const ProductAmmount = styled(Ammount)`
   color: #1ea4ce;
 `;
 
+type ProductProps = {
+  name?: string,
+  price?: number,
+  image?: string,
+}
+
 export default function Product({
   name = "Product name",
   price = 1.99,
-  image = null
-}) {
+  image = undefined
+}: ProductProps) {
   return (
     <Wrapper>
       <ImageFrame>

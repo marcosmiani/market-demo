@@ -1,4 +1,10 @@
-const BasketIcon = (props) => {
+type Props = {
+  width?: string | number,
+  height?: string | number,
+  fill?: string
+}
+
+const BasketIcon = (props: Props) => {
   const { width = 24, height = 26, fill = "none" } = props;
   return (
     <svg

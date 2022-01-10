@@ -10,7 +10,12 @@ const Value = styled.span`
   margin-left: 4px;
 `;
 
-export default function Ammount({ currency = "₺", price = 39.7, ...props }) {
+type Props = {
+  currency?: string,
+  price?: number
+}
+
+export default function Ammount({ currency = "₺", price = 39.7, ...props }: Props) {
   return (
     <Wrapper {...props}>
       {currency}
